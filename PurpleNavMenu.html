@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+    
+    div.left-side {
+        background: #3a3a3a;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: right;
+        padding-right: 20px;
+    }
+    
+    div.right-side {
+        background: #7f44af;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 3em;
+    }
+    
+    nav>div {
+        margin-bottom: 80px;
+    }
+    
+    a {
+        color: #838383;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.8em;
+        transition: all .375s ease-in;
+    }
+    
+    a::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        background: #838383;
+        width: 200px;
+        margin-left: -200px;
+        margin-top: 40px;
+    }
+    
+    a.active {
+        color: white;
+    }
+    
+    a.active::after {
+        height: 2px;
+        background: linear-gradient(to right, #7f44af, #b34d92);
+    }
+    
+    a:hover {
+        color: white;
+        padding-right: 10px;
+    }
+    
+    a:hover::after {
+        height: 2px;
+        background: linear-gradient(to right, #7f44af, #b34d92);
+    }
+    
+    section.main {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <section class="main">
+        <div class="left-side">
+            <nav>
+                <div><a class="active" href="">Home</a></div>
+                <div><a href="">Who we are</a></div>
+                <div><a href="">What we do</a></div>
+                <div><a href="">Connect with us</a></div>
+            </nav>
+        </div>
+        <div class="right-side">
+            HOME CONTENT
+        </div>
+    </section>
+</body>
+
+</html>
