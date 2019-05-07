@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Social Hover Effect</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        body {
+            background: #353535;
+        }
+        
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .icon {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            border-radius: 50%;
+            position: relative;
+            margin: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        i {
+            color: rgb(226, 226, 226);
+            font-size: 2.5em;
+        }
+        
+        i:hover {
+            font-size: 3em;
+            color: white;
+            transition: 0.25s;
+        }
+        
+        .icon::before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: rgb(53, 52, 57, 0.85);
+            position: absolute;
+            transform: translateY(-51%);
+            transition: 1s cubic-bezier(1, 1.21, .82, -0.32);
+            z-index: 1;
+        }
+        
+        .icon:hover::before {
+            transform: translateY(-100px);
+        }
+        
+        .icon::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: rgb(53, 52, 57, 0.85);
+            ;
+            position: absolute;
+            transform: translateY(51%);
+            transition: 1s cubic-bezier(1, 1.21, .82, -0.32);
+        }
+        
+        .icon:hover::after {
+            transform: translateY(100px);
+        }
+        
+        .icon.fb {
+            background: rgb(58, 85, 159);
+            box-shadow: 0px 5px 30px 7px rgba(58, 85, 159, 0.75);
+        }
+        
+        .icon.goog {
+            background: rgb(220, 78, 65);
+            box-shadow: 0px 5px 30px 7px rgba(220, 78, 65, 0.75);
+        }
+        
+        .icon.twitter {
+            background: rgb(29, 161, 242);
+            box-shadow: 0px 5px 30px 7px rgba(29, 161, 242, 0.75);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="middle">
+        <div class="row">
+            <div class="icon fb">
+                <i class="middle fab fa-facebook-f"></i>
+            </div>
+            <div class="icon goog">
+                <i class="middle fab fa-google-plus-g"></i>
+            </div>
+            <div class="icon twitter">
+                <i class="middle fab fa-twitter"></i>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
