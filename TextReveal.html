@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reveal Text Animation</title>
+    <style>
+        body {
+            background: rgb(240, 240, 240);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .reveal-right {
+            text-align: center;
+            font-size: 2em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h1 {
+            padding: 1em;
+            opacity: 0;
+            animation: fade 0.5s ease forwards;
+            animation-delay: 1s;
+        }
+        
+        .reveal-right::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(49, 49, 49, 1);
+            content: '';
+            animation: slide-right 2s cubic-bezier(.77, 0, .18, 1) forwards;
+        }
+        
+        .reveal-right::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(224, 154, 1, 1);
+            content: '';
+            animation: slide-right 3s cubic-bezier(.77, 0, .18, 1) forwards;
+        }
+        
+        .reveal-left {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reveal-left::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(49, 49, 49, 1);
+            content: '';
+            transform: translateX(100%);
+            animation: slide-left 2s cubic-bezier(.77, 0, .18, 1) forwards;
+            animation-delay: 3s;
+        }
+        
+        .reveal-left::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(224, 154, 1, 1);
+            content: '';
+            transform: translateX(100%);
+            animation: slide-left 3s cubic-bezier(.77, 0, .18, 1) forwards;
+            animation-delay: 3s;
+        }
+        
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slide-right {
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 100%;
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        @keyframes slide-left {
+            0% {
+                transform: translateX(100%);
+            }
+            50% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        p {
+            padding: 1em;
+            opacity: 0;
+            animation: fade 0.5s ease forwards;
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal-right">
+        <h1>Heading</h1>
+    </div>
+    <div class="reveal-left">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident similique ad quod laboriosam. Eum soluta consectetur beatae iure, obcaecati nihil odit illum explicabo sunt! Similique cum ab provident eius adipisci. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Explicabo cupiditate pariatur vitae dolor, labore ab nulla mollitia vel? Odit consequuntur suscipit maiores assumenda autem, similique consectetur repudiandae culpa commodi magni? Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Illo, fugiat sapiente molestias, iste quam laboriosam temporibus voluptatem voluptatum autem delectus, facere cum error sed. Eos dolorem reprehenderit earum eligendi numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+            tempore veniam saepe, ad ea officiis vitae magni at maxime sed ipsam esse enim quidem odio consectetur ducimus laboriosam obcaecati doloribus?
+
+        </p>
+    </div>
+</body>
+
+</html>
